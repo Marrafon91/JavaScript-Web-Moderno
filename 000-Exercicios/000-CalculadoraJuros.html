@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Juros</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .resultado {
+      margin-top: 15px;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calculadora de Juros</h1>
+  <div class="container">
+    <label for="capital">Capital Inicial (R$):</label>
+    <input type="number" id="capital" placeholder="Ex: 1000" required>
+
+    <label for="taxa">Taxa de Juros (ex: 0.05 para 5%):</label>
+    <input type="number" id="taxa" step="0.01" placeholder="Ex: 0.05" required>
+
+    <label for="tempo">Tempo (meses ou anos):</label>
+    <input type="number" id="tempo" placeholder="Ex: 12" required>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div class="resultado" id="resultadoSimples"></div>
+    <div class="resultado" id="resultadoComposto"></div>
+  </div>
+
+  <script>
+    function jurosSimples(capital, taxa, tempo) {
+      let montante = capital * (1 + taxa * tempo);
+      return montante.toFixed(2);
+    }
+
+    function jurosComposto(capital, taxa, tempo) {
+      let montante = capital * Math.pow((1 + taxa), tempo);
+      return montante.toFixed(2);
+    }
+
+    function calcular() {
+      let capital = parseFloat(document.getElementById("capital").value);
+      let taxa = parseFloat(document.getElementById("taxa").value);
+      let tempo = parseFloat(document.getElementById("tempo").value);
+
+      if (isNaN(capital) || isNaN(taxa) || isNaN(tempo)) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+      }
+
+      let simples = jurosSimples(capital, taxa, tempo);
+      let composto = jurosComposto(capital, taxa, tempo);
+
+      document.getElementById("resultadoSimples").textContent = ` Montante com Juros Simples: R$ ${simples}`;
+      document.getElementById("resultadoComposto").textContent = ` Montante com Juros Compostos: R$ ${composto}`;
+    }
+  </script>
+
+</body>
+</html>
