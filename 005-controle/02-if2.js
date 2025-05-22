@@ -1,18 +1,19 @@
 function teste1(num) {
   if (num > 7) {
-    console.log(num);
-    console.log("Final");
+    return `Parabens ${num} é maior que 7`
+  } else {
+    return `Infelizmente ${num} é menor que 7`
   }
 }
 
-teste1(6);
-teste1(8);
+console.log(teste1(6));
+console.log(teste1(8));
 
-function teste2(num) {
-  if (num > 7) {
-    console.log(num);
-  }
-}
+// function teste2(num) {
+//   if (num > 7) {
+//     console.log(num);
+//   }
+// }
 
-teste2(6);
-teste2(8);
+// teste2(6);
+// teste2(8);

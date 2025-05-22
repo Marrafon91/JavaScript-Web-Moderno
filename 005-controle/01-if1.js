@@ -5,7 +5,7 @@ function soBoaNoticia(nota) {
 }
 
 soBoaNoticia(8.1);
-soBoaNoticia(6.1);
+
 
 function seForVerdadeEuFalo(valor) {
   if (valor) {
