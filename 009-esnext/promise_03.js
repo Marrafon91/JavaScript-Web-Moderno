@@ -12,5 +12,5 @@ function rand(min, max) {
 
 rand(1, 60)
   .then((num) => num * 10)
-  .then((numX10) => `O numero gerado foi ${numX10}`)
+  .then((numX10) => `O numero gerado x10 foi ${numX10}`)
   .then(console.log);
