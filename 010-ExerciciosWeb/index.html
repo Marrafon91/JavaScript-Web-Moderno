@@ -14,7 +14,7 @@
         <a href="teste.html">00 - Teste</a> |
         <a href="temp.html">TEMP!!!!</a> |
         <a href="form/form.html">Formulário</a>
-        <a href="imagem.html">Imagem</a> |
+        <a href="imagens.html">Imagens</a> |
     </nav>
     <section id="conteudo"></section>
     <footer>
@@ -34,16 +34,6 @@
             }
         })
     </script>
-
-    <script>
-        function mover(elem, inicio, fim, passo, callback) {
-            const novoInicio = inicio - passo
-            if(novoInicio >= fim) {
-                elem.style.left = novoInicio + 'px'
-                setTimeout(() => mover(elem, inicio, fim, passo, callback), 7)
-            }
-        }
-    </script>
-
+    
 </body>
 </html>
