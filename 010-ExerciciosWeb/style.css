@@ -2,11 +2,11 @@
 
 * {
     margin: 0;
-    /* padding: 0; */
+    padding: 0;
     box-sizing: border-box;
 }
 
-/* html {
+html {
     font-size: 62.5%;
 }
 
@@ -16,23 +16,4 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-} */
-
-input,
-label,
-textarea {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: .3rem;
-}
-
-.radios, label {
-    display: inline-block;
-    font-weight: bolder;
-    font-size: 1.4rem;
-}
-
-input[type=checkbox] {
-    display: inline-block;
 }

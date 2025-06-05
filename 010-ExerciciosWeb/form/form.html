@@ -1,45 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../style.css"/>
     <title>Formulario</title>
-</head>
-<body>
+    <style>
+      input,
+      label,
+      textarea {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 0.3rem;
+      }
 
+      .radios,
+      label {
+        display: inline-block;
+        font-weight: bolder;
+        font-size: 1.4rem;
+      }
+
+      input[type="checkbox"] {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
     <h1>Formulário</h1>
 
-    <form  method="post">
-        <input type="hidden" name="id" value="3">
+    <form method="post">
+      <input type="hidden" name="id" value="3" />
 
-        <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" autocomplete="off">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" autocomplete="off" />
 
-        <label for="password">Senha</label>
-        <input type="password" name="password" id="password">
+      <label for="password">Senha</label>
+      <input type="password" name="password" id="password" />
 
-        <textarea name="bio" cols="30" rows="10"></textarea>
+      <textarea name="bio" cols="30" rows="10"></textarea>
 
-        <div>
-            <label for="tipo">Admin</label>
-            <input type="radio" name="tipo" id="tipo" class="radios" value="admin">
+      <div>
+        <label for="tipo">Admin</label>
+        <input
+          type="radio"
+          name="tipo"
+          id="tipo"
+          class="radios"
+          value="admin"
+        />
 
-            <label for="reg">Regular</label>
-            <input type="radio" name="tipo" id="reg" class="radios" value="regular">
+        <label for="reg">Regular</label>
+        <input
+          type="radio"
+          name="tipo"
+          id="reg"
+          class="radios"
+          value="regular"
+        />
 
-            <label for="prof">Professor</label>
-            <input type="radio" name="tipo" id="prof" class="radios" value="professor">
-        </div>
+        <label for="prof">Professor</label>
+        <input
+          type="radio"
+          name="tipo"
+          id="prof"
+          class="radios"
+          value="professor"
+        />
+      </div>
 
-        <div>
-            <label for="ativo">Ativo</label>
-            <input type="checkbox" name="ativo" id="ativo">
-        </div>
+      <div>
+        <label for="ativo">Ativo</label>
+        <input type="checkbox" name="ativo" id="ativo" />
+      </div>
 
-        <button formaction="http://localhost:3003/usuarios">Incluir</button>
-        <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+      <button formaction="http://localhost:3003/usuarios">Incluir</button>
+      <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
     </form>
-    
-</body>
+  </body>
 </html>
