@@ -3,17 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Formulario</title>
 </head>
 <body>
 
     <h1>Formulário</h1>
 
-    <form action="http://localhost:3003/usuarios" method="post">
-        <label for="nome"></label>
+    <form  method="post">
+        <input type="hidden" name="id" value="3">
+
+        <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" autocomplete="off">
 
-        <button>Incluir</button>
+        <label for="password">Senha</label>
+        <input type="password" name="password" id="password">
+
+        <textarea name="bio" cols="30" rows="10"></textarea>
+
+        <div>
+            <label for="tipo">Admin</label>
+            <input type="radio" name="tipo" id="tipo" class="radios" value="admin">
+
+            <label for="reg">Regular</label>
+            <input type="radio" name="tipo" id="reg" class="radios" value="regular">
+
+            <label for="prof">Professor</label>
+            <input type="radio" name="tipo" id="prof" class="radios" value="professor">
+        </div>
+
+        <div>
+            <label for="ativo">Ativo</label>
+            <input type="checkbox" name="ativo" id="ativo">
+        </div>
+
+        <button formaction="http://localhost:3003/usuarios">Incluir</button>
+        <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
     </form>
     
 </body>
