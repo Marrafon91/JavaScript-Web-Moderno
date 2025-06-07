@@ -58,7 +58,7 @@
 
     <div>
         <button wm-play="meuVideo" id="btnPlay">Play</button>
-        <button wm-play="meuVideo" id="btnPause">Pause</button>
+        <button wm-pause="meuVideo" id="btnPause">Pause</button>
         
     </div>
 
@@ -73,12 +73,13 @@
         });
         btnPause.addEventListener('click', () => {
             video.pause();
-        })
+        });
 
         video.addEventListener('timeupdate', () => {
             const percentual = (video.currentTime / video.duration) * 100
             barraProgresso.style.width = `${percentual}%`
-        } )
+            barraProgresso.innerHTML = `${percentual.toFixed(1)}%`
+        });
     </script>
     
 </body>
